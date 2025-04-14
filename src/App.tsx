@@ -1,18 +1,19 @@
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 
-import { Grid, Button, Box } from "@mui/material";
-import NavBar from "./components/ui/NavBar";
+import { Grid, Box } from "@mui/material";
+import NavBar from "./components/NavBar";
+import GameGrid from "./components/GameGrid";
 
-const darkTheme = createTheme({
-  palette: {
-    mode: "dark",
+const theme = createTheme({
+  colorSchemes: {
+    dark: true,
   },
 });
 
 function App() {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={theme} defaultMode="system">
       <CssBaseline />
       <main>
         <Grid container>
@@ -29,18 +30,13 @@ function App() {
               xs: "none",
             }}
           >
-            <Box
-              sx={{
-                bgcolor: "gold",
-                p: 2,
-              }}
-            >
-              Aside
-            </Box>
+            <Box>Aside</Box>
           </Grid>
 
           <Grid size={{ lg: 6, xs: 12 }}>
-            <Box sx={{ bgcolor: "lightblue", p: 2 }}>Main</Box>
+            <Box>
+              <GameGrid />
+            </Box>
           </Grid>
         </Grid>
       </main>
