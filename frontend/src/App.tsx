@@ -24,7 +24,7 @@ function App() {
           </Grid>
 
           <Grid
-            size={{ lg: 6 }}
+            size={{ lg: 1 }}
             display={{
               lg: "block",
               xs: "none",
@@ -33,7 +33,7 @@ function App() {
             <Box>Aside</Box>
           </Grid>
 
-          <Grid size={{ lg: 6, xs: 12 }}>
+          <Grid size={{ lg: 11, xs: 12 }}>
             <Box>
               <GameGrid />
             </Box>
