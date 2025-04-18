@@ -31,11 +31,11 @@ const iconMap: { [key: string]: IconType } = {
 const PlatformIconsList = ({ platforms }: Props) => {
   return (
     <>
-      <Stack direction={"row"} gap={1}>
+      <Stack direction={"row"} gap={1} alignItems={"center"}>
         {platforms.map((platform) => {
           const IconComponent = iconMap[platform.slug];
           return (
-            // if there is a match then, return the icon, otherwise undefined (instead of error)
+            // if there is a match then return the icon, otherwise undefined (instead of error)
             IconComponent && (
               <IconComponent
                 key={platform.id}

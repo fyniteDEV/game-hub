@@ -11,7 +11,7 @@ const GameGrid = () => {
       {!error && (
         <Grid container spacing={2}>
           {games.map((game) => (
-            <Grid size={{ xl: 2.4, md: 4, sm: 6, xs: 12 }} padding={2}>
+            <Grid size={{ xl: 3, md: 4, sm: 6, xs: 12 }} padding={2}>
               <GameCard game={game} />
             </Grid>
           ))}

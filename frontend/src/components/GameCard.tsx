@@ -1,6 +1,7 @@
 import { Game } from "@/hooks/useGames";
-import { Card, CardContent, CardMedia, Typography } from "@mui/material";
+import { Card, CardContent, CardMedia, Stack, Typography } from "@mui/material";
 import PlatformIconsList from "./PlatformIconsList";
+import CriticScore from "./CriticScore";
 
 interface Props {
   game: Game;
@@ -15,12 +16,16 @@ const GameCard = ({ game }: Props) => {
         title={`Cover of '${game.name}'`}
       />
       <CardContent>
+        -
         <Typography variant="h5" gutterBottom>
           {game.name}
         </Typography>
-        <PlatformIconsList
-          platforms={game.parent_platforms.map((p) => p.platform)}
-        />
+        <Stack direction={"row"} justifyContent={"space-between"}>
+          <PlatformIconsList
+            platforms={game.parent_platforms.map((p) => p.platform)}
+          />
+          <CriticScore score={game.metacritic} />
+        </Stack>
       </CardContent>
     </Card>
   );
